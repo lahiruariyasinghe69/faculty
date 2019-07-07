@@ -1,0 +1,594 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.faculty.com/it.owl#"
+     xml:base="http://www.faculty.com/it.owl"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about="http://www.faculty.com/it.owl">
+        <rdfs:comment>This is to describe about the structure of Faculty of IT, University of Moratuwa</rdfs:comment>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.faculty.com/it.owl#acquired_in -->
+
+    <owl:ObjectProperty rdf:about="http://www.faculty.com/it.owl#acquired_in">
+        <rdfs:domain rdf:resource="http://www.faculty.com/it.owl#Grade"/>
+        <rdfs:range rdf:resource="http://www.faculty.com/it.owl#Semester"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.faculty.com/it.owl#acquires -->
+
+    <owl:ObjectProperty rdf:about="http://www.faculty.com/it.owl#acquires">
+        <owl:inverseOf rdf:resource="http://www.faculty.com/it.owl#isAcquiredBy"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.faculty.com/it.owl#Student"/>
+        <rdfs:range rdf:resource="http://www.faculty.com/it.owl#Grade"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.faculty.com/it.owl#belongs_to -->
+
+    <owl:ObjectProperty rdf:about="http://www.faculty.com/it.owl#belongs_to">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.faculty.com/it.owl#AcademicStaff"/>
+        <rdfs:range rdf:resource="http://www.faculty.com/it.owl#Department"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.faculty.com/it.owl#conducts -->
+
+    <owl:ObjectProperty rdf:about="http://www.faculty.com/it.owl#conducts">
+        <owl:inverseOf rdf:resource="http://www.faculty.com/it.owl#isConductedBy"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.faculty.com/it.owl#Faculty"/>
+        <rdfs:range rdf:resource="http://www.faculty.com/it.owl#Project"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.faculty.com/it.owl#follows -->
+
+    <owl:ObjectProperty rdf:about="http://www.faculty.com/it.owl#follows">
+        <owl:inverseOf rdf:resource="http://www.faculty.com/it.owl#isFollowedBy"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.faculty.com/it.owl#Student"/>
+        <rdfs:range rdf:resource="http://www.faculty.com/it.owl#DegreeProgram"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.faculty.com/it.owl#governs -->
+
+    <owl:ObjectProperty rdf:about="http://www.faculty.com/it.owl#governs">
+        <owl:inverseOf rdf:resource="http://www.faculty.com/it.owl#isGovernedBy"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.faculty.com/it.owl#hasType -->
+
+    <owl:ObjectProperty rdf:about="http://www.faculty.com/it.owl#hasType">
+        <owl:inverseOf rdf:resource="http://www.faculty.com/it.owl#isTypeOf"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.faculty.com/it.owl#Module"/>
+        <rdfs:range rdf:resource="http://www.faculty.com/it.owl#ModuleType"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.faculty.com/it.owl#hasValuePartition -->
+
+    <owl:ObjectProperty rdf:about="http://www.faculty.com/it.owl#hasValuePartition">
+        <owl:inverseOf rdf:resource="http://www.faculty.com/it.owl#isValuePartitionOf"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.faculty.com/it.owl#holds -->
+
+    <owl:ObjectProperty rdf:about="http://www.faculty.com/it.owl#holds">
+        <owl:inverseOf rdf:resource="http://www.faculty.com/it.owl#isHeldBy"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.faculty.com/it.owl#Faculty"/>
+        <rdfs:range rdf:resource="http://www.faculty.com/it.owl#Examination"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.faculty.com/it.owl#isAcquiredBy -->
+
+    <owl:ObjectProperty rdf:about="http://www.faculty.com/it.owl#isAcquiredBy">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.faculty.com/it.owl#Grade"/>
+        <rdfs:range rdf:resource="http://www.faculty.com/it.owl#Student"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.faculty.com/it.owl#isConductedBy -->
+
+    <owl:ObjectProperty rdf:about="http://www.faculty.com/it.owl#isConductedBy">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.faculty.com/it.owl#Project"/>
+        <rdfs:range rdf:resource="http://www.faculty.com/it.owl#Faculty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.faculty.com/it.owl#isFollowedBy -->
+
+    <owl:ObjectProperty rdf:about="http://www.faculty.com/it.owl#isFollowedBy">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.faculty.com/it.owl#DegreeProgram"/>
+        <rdfs:range rdf:resource="http://www.faculty.com/it.owl#Student"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.faculty.com/it.owl#isGovernedBy -->
+
+    <owl:ObjectProperty rdf:about="http://www.faculty.com/it.owl#isGovernedBy">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.faculty.com/it.owl#isHeldBy -->
+
+    <owl:ObjectProperty rdf:about="http://www.faculty.com/it.owl#isHeldBy">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.faculty.com/it.owl#Examination"/>
+        <rdfs:range rdf:resource="http://www.faculty.com/it.owl#Faculty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.faculty.com/it.owl#isMonitoredBy -->
+
+    <owl:ObjectProperty rdf:about="http://www.faculty.com/it.owl#isMonitoredBy">
+        <owl:inverseOf rdf:resource="http://www.faculty.com/it.owl#monitors"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.faculty.com/it.owl#Research"/>
+        <rdfs:range rdf:resource="http://www.faculty.com/it.owl#Faculty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.faculty.com/it.owl#isOfferedBy -->
+
+    <owl:ObjectProperty rdf:about="http://www.faculty.com/it.owl#isOfferedBy">
+        <owl:inverseOf rdf:resource="http://www.faculty.com/it.owl#offers"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.faculty.com/it.owl#DegreeProgram"/>
+        <rdfs:range rdf:resource="http://www.faculty.com/it.owl#Department"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.faculty.com/it.owl#isPublishedBy -->
+
+    <owl:ObjectProperty rdf:about="http://www.faculty.com/it.owl#isPublishedBy">
+        <owl:inverseOf rdf:resource="http://www.faculty.com/it.owl#publishes"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.faculty.com/it.owl#Publication"/>
+        <rdfs:range rdf:resource="http://www.faculty.com/it.owl#Faculty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.faculty.com/it.owl#isTaughtBy -->
+
+    <owl:ObjectProperty rdf:about="http://www.faculty.com/it.owl#isTaughtBy">
+        <owl:inverseOf rdf:resource="http://www.faculty.com/it.owl#teaches"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.faculty.com/it.owl#Module"/>
+        <rdfs:range rdf:resource="http://www.faculty.com/it.owl#AdminStaff"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.faculty.com/it.owl#isTypeOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.faculty.com/it.owl#isTypeOf">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.faculty.com/it.owl#ModuleType"/>
+        <rdfs:range rdf:resource="http://www.faculty.com/it.owl#Module"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.faculty.com/it.owl#isValuePartitionOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.faculty.com/it.owl#isValuePartitionOf">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.faculty.com/it.owl#monitors -->
+
+    <owl:ObjectProperty rdf:about="http://www.faculty.com/it.owl#monitors">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.faculty.com/it.owl#Faculty"/>
+        <rdfs:range rdf:resource="http://www.faculty.com/it.owl#Research"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.faculty.com/it.owl#offers -->
+
+    <owl:ObjectProperty rdf:about="http://www.faculty.com/it.owl#offers">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.faculty.com/it.owl#Department"/>
+        <rdfs:range rdf:resource="http://www.faculty.com/it.owl#DegreeProgram"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.faculty.com/it.owl#publishes -->
+
+    <owl:ObjectProperty rdf:about="http://www.faculty.com/it.owl#publishes">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.faculty.com/it.owl#Faculty"/>
+        <rdfs:range rdf:resource="http://www.faculty.com/it.owl#Publication"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.faculty.com/it.owl#teaches -->
+
+    <owl:ObjectProperty rdf:about="http://www.faculty.com/it.owl#teaches">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.faculty.com/it.owl#AcademicStaff"/>
+        <rdfs:range rdf:resource="http://www.faculty.com/it.owl#Module"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.faculty.com/it.owl#AcademicStaff -->
+
+    <owl:Class rdf:about="http://www.faculty.com/it.owl#AcademicStaff">
+        <rdfs:subClassOf rdf:resource="http://www.faculty.com/it.owl#Person"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.faculty.com/it.owl#AcademicStanding -->
+
+    <owl:Class rdf:about="http://www.faculty.com/it.owl#AcademicStanding">
+        <rdfs:subClassOf rdf:resource="http://www.faculty.com/it.owl#Student"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.faculty.com/it.owl#AdminStaff -->
+
+    <owl:Class rdf:about="http://www.faculty.com/it.owl#AdminStaff">
+        <rdfs:subClassOf rdf:resource="http://www.faculty.com/it.owl#Person"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.faculty.com/it.owl#Batch -->
+
+    <owl:Class rdf:about="http://www.faculty.com/it.owl#Batch">
+        <rdfs:subClassOf rdf:resource="http://www.faculty.com/it.owl#Student"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.faculty.com/it.owl#CM -->
+
+    <owl:Class rdf:about="http://www.faculty.com/it.owl#CM">
+        <rdfs:subClassOf rdf:resource="http://www.faculty.com/it.owl#Department"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.faculty.com/it.owl#DegreeProgram -->
+
+    <owl:Class rdf:about="http://www.faculty.com/it.owl#DegreeProgram"/>
+    
+
+
+    <!-- http://www.faculty.com/it.owl#Department -->
+
+    <owl:Class rdf:about="http://www.faculty.com/it.owl#Department">
+        <rdfs:subClassOf rdf:resource="http://www.faculty.com/it.owl#Faculty"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.faculty.com/it.owl#DepartmentPartition -->
+
+    <owl:Class rdf:about="http://www.faculty.com/it.owl#DepartmentPartition">
+        <rdfs:subClassOf rdf:resource="http://www.faculty.com/it.owl#ValuePartition"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.faculty.com/it.owl#EndSemesterExamination -->
+
+    <owl:Class rdf:about="http://www.faculty.com/it.owl#EndSemesterExamination">
+        <rdfs:subClassOf rdf:resource="http://www.faculty.com/it.owl#Examination"/>
+        <owl:disjointWith rdf:resource="http://www.faculty.com/it.owl#MidSemesterExamination"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.faculty.com/it.owl#Examination -->
+
+    <owl:Class rdf:about="http://www.faculty.com/it.owl#Examination"/>
+    
+
+
+    <!-- http://www.faculty.com/it.owl#Faculty -->
+
+    <owl:Class rdf:about="http://www.faculty.com/it.owl#Faculty"/>
+    
+
+
+    <!-- http://www.faculty.com/it.owl#FirstClass -->
+
+    <owl:Class rdf:about="http://www.faculty.com/it.owl#FirstClass">
+        <rdfs:subClassOf rdf:resource="http://www.faculty.com/it.owl#StudentClass"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.faculty.com/it.owl#First_Class -->
+
+    <owl:Class rdf:about="http://www.faculty.com/it.owl#First_Class">
+        <rdfs:subClassOf rdf:resource="http://www.faculty.com/it.owl#AcademicStanding"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.faculty.com/it.owl#GeneralClass -->
+
+    <owl:Class rdf:about="http://www.faculty.com/it.owl#GeneralClass">
+        <rdfs:subClassOf rdf:resource="http://www.faculty.com/it.owl#StudentClass"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.faculty.com/it.owl#Grade -->
+
+    <owl:Class rdf:about="http://www.faculty.com/it.owl#Grade">
+        <rdfs:subClassOf rdf:resource="http://www.faculty.com/it.owl#Student_Module"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.faculty.com/it.owl#Groupproject -->
+
+    <owl:Class rdf:about="http://www.faculty.com/it.owl#Groupproject">
+        <rdfs:subClassOf rdf:resource="http://www.faculty.com/it.owl#Project"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.faculty.com/it.owl#IDS -->
+
+    <owl:Class rdf:about="http://www.faculty.com/it.owl#IDS">
+        <rdfs:subClassOf rdf:resource="http://www.faculty.com/it.owl#Department"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.faculty.com/it.owl#IT -->
+
+    <owl:Class rdf:about="http://www.faculty.com/it.owl#IT">
+        <rdfs:subClassOf rdf:resource="http://www.faculty.com/it.owl#Department"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.faculty.com/it.owl#Individualproject -->
+
+    <owl:Class rdf:about="http://www.faculty.com/it.owl#Individualproject">
+        <rdfs:subClassOf rdf:resource="http://www.faculty.com/it.owl#Project"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.faculty.com/it.owl#Level -->
+
+    <owl:Class rdf:about="http://www.faculty.com/it.owl#Level">
+        <rdfs:subClassOf rdf:resource="http://www.faculty.com/it.owl#Student"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.faculty.com/it.owl#MidSemesterExamination -->
+
+    <owl:Class rdf:about="http://www.faculty.com/it.owl#MidSemesterExamination">
+        <rdfs:subClassOf rdf:resource="http://www.faculty.com/it.owl#Examination"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.faculty.com/it.owl#Module -->
+
+    <owl:Class rdf:about="http://www.faculty.com/it.owl#Module">
+        <rdfs:subClassOf rdf:resource="http://www.faculty.com/it.owl#DegreeProgram"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.faculty.com/it.owl#ModulePartition -->
+
+    <owl:Class rdf:about="http://www.faculty.com/it.owl#ModulePartition">
+        <rdfs:subClassOf rdf:resource="http://www.faculty.com/it.owl#ValuePartition"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.faculty.com/it.owl#ModuleType -->
+
+    <owl:Class rdf:about="http://www.faculty.com/it.owl#ModuleType">
+        <rdfs:subClassOf rdf:resource="http://www.faculty.com/it.owl#Module"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.faculty.com/it.owl#NonAcademicStaff -->
+
+    <owl:Class rdf:about="http://www.faculty.com/it.owl#NonAcademicStaff">
+        <rdfs:subClassOf rdf:resource="http://www.faculty.com/it.owl#Person"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.faculty.com/it.owl#NonPeriodical -->
+
+    <owl:Class rdf:about="http://www.faculty.com/it.owl#NonPeriodical">
+        <rdfs:subClassOf rdf:resource="http://www.faculty.com/it.owl#Publication"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.faculty.com/it.owl#Pass -->
+
+    <owl:Class rdf:about="http://www.faculty.com/it.owl#Pass">
+        <rdfs:subClassOf rdf:resource="http://www.faculty.com/it.owl#AcademicStanding"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.faculty.com/it.owl#Periodical -->
+
+    <owl:Class rdf:about="http://www.faculty.com/it.owl#Periodical">
+        <rdfs:subClassOf rdf:resource="http://www.faculty.com/it.owl#Publication"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.faculty.com/it.owl#Person -->
+
+    <owl:Class rdf:about="http://www.faculty.com/it.owl#Person">
+        <rdfs:subClassOf rdf:resource="http://www.faculty.com/it.owl#Faculty"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.faculty.com/it.owl#Project -->
+
+    <owl:Class rdf:about="http://www.faculty.com/it.owl#Project"/>
+    
+
+
+    <!-- http://www.faculty.com/it.owl#Publication -->
+
+    <owl:Class rdf:about="http://www.faculty.com/it.owl#Publication"/>
+    
+
+
+    <!-- http://www.faculty.com/it.owl#Research -->
+
+    <owl:Class rdf:about="http://www.faculty.com/it.owl#Research"/>
+    
+
+
+    <!-- http://www.faculty.com/it.owl#SecondLowerClass -->
+
+    <owl:Class rdf:about="http://www.faculty.com/it.owl#SecondLowerClass">
+        <rdfs:subClassOf rdf:resource="http://www.faculty.com/it.owl#StudentClass"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.faculty.com/it.owl#SecondUpperClass -->
+
+    <owl:Class rdf:about="http://www.faculty.com/it.owl#SecondUpperClass">
+        <rdfs:subClassOf rdf:resource="http://www.faculty.com/it.owl#StudentClass"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.faculty.com/it.owl#Second_Class_Lower_Division -->
+
+    <owl:Class rdf:about="http://www.faculty.com/it.owl#Second_Class_Lower_Division">
+        <rdfs:subClassOf rdf:resource="http://www.faculty.com/it.owl#AcademicStanding"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.faculty.com/it.owl#Second_Class_Upper_Division -->
+
+    <owl:Class rdf:about="http://www.faculty.com/it.owl#Second_Class_Upper_Division">
+        <rdfs:subClassOf rdf:resource="http://www.faculty.com/it.owl#AcademicStanding"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.faculty.com/it.owl#Semester -->
+
+    <owl:Class rdf:about="http://www.faculty.com/it.owl#Semester">
+        <rdfs:subClassOf rdf:resource="http://www.faculty.com/it.owl#Level"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.faculty.com/it.owl#Student -->
+
+    <owl:Class rdf:about="http://www.faculty.com/it.owl#Student">
+        <rdfs:subClassOf rdf:resource="http://www.faculty.com/it.owl#Person"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.faculty.com/it.owl#StudentClass -->
+
+    <owl:Class rdf:about="http://www.faculty.com/it.owl#StudentClass"/>
+    
+
+
+    <!-- http://www.faculty.com/it.owl#Student_Module -->
+
+    <owl:Class rdf:about="http://www.faculty.com/it.owl#Student_Module">
+        <rdfs:subClassOf rdf:resource="http://www.faculty.com/it.owl#Student"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.faculty.com/it.owl#ValuePartition -->
+
+    <owl:Class rdf:about="http://www.faculty.com/it.owl#ValuePartition"/>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.2.8.20170104-2310) https://github.com/owlcs/owlapi -->
+
