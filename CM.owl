@@ -1169,6 +1169,8 @@
     <owl:NamedIndividual rdf:about="http://www.faculty.com/departments/mathematics.owl#Piyathilaka">
         <rdf:type rdf:resource="http://www.faculty.com/departments/mathematics.owl#Lecturer"/>
         <mathematics:teaches rdf:resource="http://www.faculty.com/departments/mathematics.owl#Advanced_Topics_in_Mathematics"/>
+        <mathematics:teaches rdf:resource="http://www.faculty.com/departments/mathematics.owl#Calculus_&amp;_Statistical_Distributions"/>
+        <mathematics:teaches rdf:resource="http://www.faculty.com/departments/mathematics.owl#Fundamentals_of_Mathematics_&amp;_Statistics"/>
         <mathematics:Email rdf:datatype="http://www.w3.org/2001/XMLSchema#string">thilins@uom.lk</mathematics:Email>
         <mathematics:EmployeeID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">102897D</mathematics:EmployeeID>
         <mathematics:FirstName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Thilini</mathematics:FirstName>
@@ -1334,6 +1336,7 @@
     <owl:NamedIndividual rdf:about="http://www.faculty.com/departments/mathematics.owl#Calculus_&amp;_Statistical_Distributions">
         <rdf:type rdf:resource="http://www.faculty.com/departments/mathematics.owl#Compulsory"/>
         <rdf:type rdf:resource="http://www.faculty.com/departments/mathematics.owl#Mathematics&amp;Statistics"/>
+        <mathematics:isTaughtBy rdf:resource="http://www.faculty.com/departments/mathematics.owl#Piyathilaka"/>
         <mathematics:CourseModuleName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Calculus &amp; Statistical Distributions</mathematics:CourseModuleName>
         <mathematics:CourseModuleNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CM2110</mathematics:CourseModuleNumber>
     </owl:NamedIndividual>
@@ -1345,6 +1348,7 @@
     <owl:NamedIndividual rdf:about="http://www.faculty.com/departments/mathematics.owl#Fundamentals_of_Mathematics_&amp;_Statistics">
         <rdf:type rdf:resource="http://www.faculty.com/departments/mathematics.owl#Compulsory"/>
         <rdf:type rdf:resource="http://www.faculty.com/departments/mathematics.owl#Mathematics&amp;Statistics"/>
+        <mathematics:isTaughtBy rdf:resource="http://www.faculty.com/departments/mathematics.owl#Piyathilaka"/>
         <mathematics:CourseModuleName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Fundamentals of Mathematics &amp; Statistics</mathematics:CourseModuleName>
         <mathematics:CourseModuleNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CM1110</mathematics:CourseModuleNumber>
     </owl:NamedIndividual>
